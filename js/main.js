@@ -13,13 +13,18 @@ setInterval(() => {
 }, 1000);
 
 setInterval(() => {
-  document.querySelectorAll("#game > .egg").forEach(element => {
-    const top = element.style.top.length !== 0 ? parseFloat(element.style.top) : 0;
-    console.log(element.style.top);
-    element.style.top = (top + 0.3) + "vh";
+  document.querySelectorAll("#game > .egg").forEach(egg => {
+    const top = egg.style.top.length !== 0 ? parseFloat(egg.style.top) : 0;
+    console.log(egg.style.top);
+    egg.style.top = (top + 0.5) + "vh";
 
-    if(top > 100) {
-      element.remove();
+    if(parseFloat(egg.style.top) > 100) {
+      const basket = document.querySelector("#game > .basket");
+      const basketX = parseFloat(basket.style.left);
+      const eggX= parseFloat(egg.style.left);
+      const eggWidth= (5 * egg.widt / egg.height);
+    }else if(parseFloat(egg.style.top) > 100) {
+      egg.remove();
 
       const heart = document.querySelector(".heart");
       heart.remove();
@@ -30,3 +35,20 @@ setInterval(() => {
     }
   })
 }, 30 / 1000);
+
+document.body.addEventListener("keydown", event => {
+  const basket = document.querySelector("#game > .basket");
+  switch (event.key) {
+    case "ArrowLeft":
+      basket.style.left = updatePosition(basket.style.left, -1);
+      break;
+    case "ArrowRight":
+      basket.style.left = updatePosition(basket.style.left, 1);
+      break;
+  }
+})
+
+function updatePosition(position, delta) {
+  const top = position.length !== 0 ? parseFloat(position) : 0;
+  return (top + delta) + "vh";
+}

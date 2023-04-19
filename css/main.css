@@ -32,3 +32,17 @@ body {
   height: 5vh;
   position: absolute;
 }
+
+.basket {
+  width: 20vh;
+  position: absolute;
+  bottom: 0;
+  left: 60vh;
+  transform: translateX(-50%);
+}
+
+#score {
+  font-size: 14px;
+
+}
+
