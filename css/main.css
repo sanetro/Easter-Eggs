@@ -8,13 +8,24 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+#start-game {
+
 }
 
 #game {
+  display: none;
   background-color: #DDD;
   height: 100vh;
   aspect-ratio: 1.2;
   position: relative;
+}
+
+#end-game {
+  display: none;
 }
 
 #life {
@@ -33,16 +44,18 @@ body {
   position: absolute;
 }
 
-.basket {
+#basket {
   width: 20vh;
   position: absolute;
   bottom: 0;
-  left: 60vh;
   transform: translateX(-50%);
 }
 
 #score {
-  font-size: 14px;
-
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: monospace;
+  font-size: 2rem;
+  padding: 0.5rem;
 }
-
