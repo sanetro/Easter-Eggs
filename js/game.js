@@ -35,7 +35,7 @@ class Game {
     // Falling eggs
     this.eggTick = setInterval(() => {
       document.querySelectorAll("#game > .egg").forEach(egg => {
-        egg.style.top = this.updatePosition(egg.style.top, 0.8);
+        egg.style.top = this.updatePosition(egg.style.top, 0.2);
 
         // Egg hit basket - score +1
         if(parseFloat(egg.style.top) > 87 && parseFloat(egg.style.top) <= 100) {
@@ -84,10 +84,10 @@ class Game {
     const basket = document.querySelector("#basket");
     switch (event.key) {
       case "ArrowLeft":
-        basket.style.left = this.updatePosition(basket.style.left, -2);
+        basket.style.left = this.updatePosition(basket.style.left, -3);
         break;
       case "ArrowRight":
-        basket.style.left = this.updatePosition(basket.style.left, 2);
+        basket.style.left = this.updatePosition(basket.style.left, 3);
         break;
     }
 

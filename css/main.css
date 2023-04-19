@@ -5,6 +5,7 @@
 }
 
 body {
+  background: linear-gradient(132deg, rgb(31, 207, 195) 0.00%, rgb(31, 145, 207) 100.00%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,8 +18,11 @@ body {
 }
 
 #game {
-  display: none;
-  background-color: #DDD;
+  background: url("../images/backgorund-game.jpg");
+  position: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   height: 100vh;
   aspect-ratio: 1.2;
   position: relative;
@@ -54,8 +58,31 @@ body {
 #score {
   position: absolute;
   left: 0;
-  top: 0;
+  top: -200px;
   font-family: monospace;
   font-size: 2rem;
   padding: 0.5rem;
+}
+
+.custom-button {
+  border: black solid 2px;
+  padding: 10px;
+  margin: 10px;
+  background: goldenrod;
+  border-radius: 2px;
+  font-size: 200%;
+}
+.custom-button:hover {
+  background: gold;
+  cursor: pointer;
+}
+
+#start-button {
+  position: absolute;
+  top: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+}
+.score-info {
+  font-size: 200%;
 }
